@@ -132,17 +132,17 @@ cv::Mat generate_fisheye_image(cv::Mat image, cv::Mat K, cv::Mat D, cv::Mat R_t_
         H_points_matrix.at<double>(k,2)=1;
     }
     
-    cv::Mat homography_points_matrix=H.inv()*H_points_matrix.t();
-    vector<cv::Point2f> homography_undistorted_points;
-    vector<cv::Point2f> H_distorted_points;
-    for(int u=0;u<rows;u++)
-        for(int v=0;v<cols;v++){
-            double x=homography_points_matrix.at<double>(0,u*cols+v)/homography_points_matrix.at<double>(2,u*cols+v);
-            double y=homography_points_matrix.at<double>(1,u*cols+v)/homography_points_matrix.at<double>(2,u*cols+v);
-            homography_undistorted_points.push_back(cv::Point2f(x,y));
-    }
-    
-    //generate nomalized points
+//    cv::Mat homography_points_matrix=H.inv()*H_points_matrix.t();
+//    vector<cv::Point2f> homography_undistorted_points;
+//    vector<cv::Point2f> H_distorted_points;
+//    for(int u=0;u<rows;u++)
+//        for(int v=0;v<cols;v++){
+//            double x=homography_points_matrix.at<double>(0,u*cols+v)/homography_points_matrix.at<double>(2,u*cols+v);
+//            double y=homography_points_matrix.at<double>(1,u*cols+v)/homography_points_matrix.at<double>(2,u*cols+v);
+//            homography_undistorted_points.push_back(cv::Point2f(x,y));
+//    }
+
+    //generate normalized points
     cv::Mat K_tr=cv::Mat::zeros(3,3,CV_64FC1);
     cv::invert(K,K_tr);
     homography_points_matrix=K_tr*homography_points_matrix;

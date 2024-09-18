@@ -1,0 +1,62 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+.idea
+# folders
+.cache/
+__pycache__/
+archive/
+build/
+results/
+tars/
+Swin-Transformer/
+ultralytics/
+CenterPoint/
+Lidar_AI_Solution/
+
+# others
+# Makefile.config
+compile_commands.json
+calibration_table.txt
+trt-cuda
+trt-infer
+# .clangd
+*.tar
+*.pth
+*.pt
+*.onnx
+*.engine
+*.o
+*.mk
+*-fp16*
+*-fp32*
+*-int8*
